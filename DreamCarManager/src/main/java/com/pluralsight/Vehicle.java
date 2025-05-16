@@ -102,7 +102,7 @@ public class Vehicle {
     }
 
     public String getStatus() {
-        return isSold ? "Sold" : "Avalable";
+        return isSold ? "Sold" : "Available";
     }
 
 }
