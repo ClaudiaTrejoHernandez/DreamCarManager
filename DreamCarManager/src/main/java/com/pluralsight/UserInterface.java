@@ -212,7 +212,6 @@ public class UserInterface {
                 } else {
                     displayVehicles(results);
                 }
-
                 break;
 
             } catch (Exception e) {
