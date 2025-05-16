@@ -5,22 +5,6 @@ public class Main {
 
         UserInterface userInterface = new UserInterface();
         userInterface.display();
-=======
-<<<<<<< HEAD
-        UserInterface userInterface = new UserInterface();
-        userInterface.display();
 
-<<<<<<< HEAD
-=======
-=======
- Cricelia
-        UserInterface userInterface = new UserInterface();
-        userInterface.display();
-
-
-        System.out.println("Hello, World!");
->>>>>>> Cricelia
->>>>>>> Claudia
->>>>>>> main
     }
 }
