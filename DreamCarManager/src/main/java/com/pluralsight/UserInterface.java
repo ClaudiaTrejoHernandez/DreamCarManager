@@ -36,6 +36,8 @@ public class UserInterface {
                     case 7 -> processGetAllVehiclesRequest();
                     case 8 -> processAddVehicleRequest();
                     case 9 -> processRemoveVehicleRequest();
+                    case 10 -> processSellVehicle();
+                    case 11 -> processLeaseVehicle();
                     case 0 -> running = false;
                     default -> System.out.println("Invalid Option.");
                 }
@@ -47,6 +49,7 @@ public class UserInterface {
             }
         }
     }
+
 
     public int displayMenu() {  //Helper method to display menu
 
@@ -60,8 +63,11 @@ public class UserInterface {
         System.out.println("7️⃣  View All Vehicles 🚘");
         System.out.println("8️⃣  Add a Vehicle ➕🚗");
         System.out.println("9️⃣  Remove a Vehicle ➖🚗");
+        System.out.println("🔟  Sell a Vehicle 💵🚗");
+        System.out.println("⓫  Lease a Vehicle 📄🔑");
         System.out.println("0️⃣  Exit ❌");
-        System.out.println("Please select an option: ");
+        System.out.print("Please select an option: ");
+
 
         int choice = read.nextInt();
         read.nextLine();
@@ -298,6 +304,13 @@ public class UserInterface {
             System.out.println("❌ Error removing vehicle: " + e.getMessage());
             read.nextLine();
         }
+    }
+
+    private void processSellVehicle() {
+    }
+
+    private void processLeaseVehicle() {
+
     }
 }
 
