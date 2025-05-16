@@ -90,8 +90,8 @@ public class Vehicle {
 
 
     public String toString() {
-        return String.format("VIN: %d | Year: %d | Make: %s | Model: %s | Type: %s | Color: %s | Odometer: %d | Price: $%.2f",
-                vin, year, make, model, vehicleType, color, odometer, price);    }
+        return String.format("Status: %s | VIN: %d | Year: %d | Make: %s | Model: %s | Type: %s | Color: %s | Odometer: %d | Price: $%.2f",
+                getStatus(), vin, year, make, model, vehicleType, color, odometer, price);    }
 
     public void sell() {
         this.isSold = true;
