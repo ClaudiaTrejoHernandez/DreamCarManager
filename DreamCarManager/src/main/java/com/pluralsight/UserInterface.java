@@ -256,7 +256,7 @@ public class UserInterface {
 
             //Save updated dealership to file
             DealershipFileManager dfm = new DealershipFileManager();
-//            dfm.saveDealership(dealership);
+            dfm.saveDealership(dealership);
 
             System.out.println("\n✅ Vehicle added successfully!");
 
@@ -287,7 +287,7 @@ public class UserInterface {
 
                 //Save updated dealership to file
                 DealershipFileManager dfm = new DealershipFileManager();
-//                dfm.saveDealership(dealership);
+                dfm.saveDealership(dealership);
 
                 System.out.println("\n✅ Vehicle removed successfully!");
             } else {
