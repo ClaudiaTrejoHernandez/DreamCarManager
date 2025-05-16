@@ -11,6 +11,8 @@ public class Vehicle {
     private int odometer;
     private double price;
 
+    private boolean isSold = false;
+
     public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
         this.vin = vin;
         this.year = year;
@@ -90,5 +92,17 @@ public class Vehicle {
     public String toString() {
         return String.format("VIN: %d | Year: %d | Make: %s | Model: %s | Type: %s | Color: %s | Odometer: %d | Price: $%.2f",
                 vin, year, make, model, vehicleType, color, odometer, price);    }
+
+    public void sell() {
+        this.isSold = true;
+    }
+
+    public boolean isSold() {
+        return isSold;
+    }
+
+    public String getStatus() {
+        return isSold ? "Sold" : "Avalable";
+    }
 
 }
