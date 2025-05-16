@@ -30,10 +30,14 @@ public class SalesContract extends Contract {
     public double getTotalPrice() {
         salesTax = 0.05;
         recordingFee = 100.00;
+        double totalPrice;
         Contract contract = new SalesContract(getDate(), getCustomerName(), getCustomerEmail(), getVehicleSold(),
                 getSalesTax(), getRecordingFee(), getProcessingFee(), isFinance()); // ← make an instance
         double price = contract.getVehicleSold().getPrice();
-        if (price <= 10000.00)
+        if (price <= 10000.00) {
+            processingFee = 295.00;
+            totalPrice = 
+        }
 
         return 0;
     }
