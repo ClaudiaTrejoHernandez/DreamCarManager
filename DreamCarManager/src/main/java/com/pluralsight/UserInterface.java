@@ -66,7 +66,7 @@ public class UserInterface {
         System.out.println("🔟  Sell a Vehicle 💵🚗");
         System.out.println("⓫  Lease a Vehicle 📄🔑");
         System.out.println("0️⃣  Exit ❌");
-        System.out.print("Please select an option: ");
+        System.out.print("Please select an option: \n");
 
 
         int choice = read.nextInt();
