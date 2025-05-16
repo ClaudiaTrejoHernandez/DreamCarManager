@@ -307,12 +307,30 @@ public class UserInterface {
     }
 
     private void processSellVehicle() {
+        try {
+            System.out.println("Enter Vehicle VIN: ");
+            int vin = Integer.parseInt(read.nextLine());
+
+            boolean success = dealership.sellVehicle(vin);
+
+            if (success) {
+                System.out.println("✅ Vehicle with VIN " + vin + " has been marked as SOLD.");
+            } else {
+                System.out.println("❌ Vehicle not found or already sold.");
+            }
+
+        } catch (NumberFormatException e) {
+            System.out.println("❌ Invalid VIN format. Please enter a number.");
+        }
+
     }
 
     private void processLeaseVehicle() {
+        
 
     }
 }
+
 
 
 
