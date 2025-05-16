@@ -4,7 +4,7 @@ import java.io.*;
 
 public class DealershipFileManager {
     public Dealership getDealership() {
-        File file = new File("src/main/java/com/CarsVroom/data/inventory.csv");
+        File file = new File("src/main/resources/inventory.csv");
         Dealership dealership = null;
         try {
             BufferedReader bf = new BufferedReader(new FileReader(file));
