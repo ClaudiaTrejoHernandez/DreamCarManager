@@ -18,6 +18,11 @@ public class LeaseContract extends Contract {
     public void setLeaseFee(double leaseFee) { this.leaseFee = leaseFee; }
 
     @Override
+    public double getTotalPrice() {
+        return 0;
+    }
+
+    @Override
     public double getMonthlyPayment() {
         return 0;
     }
