@@ -6,7 +6,8 @@ public class SalesContract extends Contract {
     private double processingFee;
     private boolean finance;
 
-    public SalesContract(String date, String customerName, String customerEmail, String vehicleSold, double salesTax, double recordingFee, double processingFee, boolean finance) {
+    public SalesContract(String date, String customerName, String customerEmail, Vehicle vehicleSold, double salesTax,
+                         double recordingFee, double processingFee, boolean finance) {
 
         super(date, customerName, customerEmail, vehicleSold);
         this.salesTax = salesTax;
@@ -27,6 +28,13 @@ public class SalesContract extends Contract {
 
     @Override
     public double getTotalPrice() {
+        salesTax = 0.05;
+        recordingFee = 100.00;
+        Contract contract = new SalesContract(getDate(), getCustomerName(), getCustomerEmail(), getVehicleSold(),
+                getSalesTax(), getRecordingFee(), getProcessingFee(), isFinance()); // ← make an instance
+        double price = contract.getVehicleSold().getPrice();
+        if (price <= 10000.00)
+
         return 0;
     }
 
