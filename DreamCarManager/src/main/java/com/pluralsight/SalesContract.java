@@ -28,22 +28,37 @@ public class SalesContract extends Contract {
 
     @Override
     public double getTotalPrice() {
-        salesTax = 0.05;
         recordingFee = 100.00;
         double totalPrice;
         Contract contract = new SalesContract(getDate(), getCustomerName(), getCustomerEmail(), getVehicleSold(),
                 getSalesTax(), getRecordingFee(), getProcessingFee(), isFinance()); // ← make an instance
         double price = contract.getVehicleSold().getPrice();
+        salesTax = price * 0.05;
         if (price <= 10000.00) {
             processingFee = 295.00;
-            totalPrice = 
+            totalPrice = price + processingFee + recordingFee + salesTax;
+            return totalPrice;
+        } else {
+            processingFee = 495.00;
+            totalPrice = price + processingFee + recordingFee + salesTax;
+            return totalPrice;
         }
-
-        return 0;
     }
 
     @Override
     public double getMonthlyPayment() {
-        return 0;
+        int month;
+        Contract contract = new SalesContract(getDate(), getCustomerName(), getCustomerEmail(), getVehicleSold(),
+                getSalesTax(), getRecordingFee(), getProcessingFee(), isFinance());
+        double price = contract.getVehicleSold().getPrice();
+        while (finance) {
+            if (price >= 10000) {
+                month = 48;
+
+            } else {
+                month = 24;
+
+            }
+        }
     }
 }
