@@ -20,19 +20,12 @@ public class SalesContract extends Contract {
     public double getRecordingFee() { return recordingFee; }
     public double getProcessingFee() { return processingFee; }
     public boolean isFinance() { return finance; }
-    //Setters
-    public void setSalesTax(double salesTax) { this.salesTax = salesTax; }
-    public void setRecordingFee(double recordingFee) { this.recordingFee = recordingFee; }
-    public void setProcessingFee(double processingFee) { this.processingFee = processingFee; }
-    public void setFinance(boolean finance) { this.finance = finance; }
 
     @Override
     public double getTotalPrice() {
         recordingFee = 100.00;
         double totalPrice;
-        Contract contract = new SalesContract(getDate(), getCustomerName(), getCustomerEmail(), getVehicleSold(),
-                getSalesTax(), getRecordingFee(), getProcessingFee(), isFinance()); // ← make an instance
-        double price = contract.getVehicleSold().getPrice();
+        double price = getVehicleSold().getPrice();
         salesTax = price * 0.05;
         if (price <= 10000.00) {
             processingFee = 295.00;
@@ -47,18 +40,26 @@ public class SalesContract extends Contract {
 
     @Override
     public double getMonthlyPayment() {
-        int month;
-        Contract contract = new SalesContract(getDate(), getCustomerName(), getCustomerEmail(), getVehicleSold(),
-                getSalesTax(), getRecordingFee(), getProcessingFee(), isFinance());
-        double price = contract.getVehicleSold().getPrice();
-        while (finance) {
+        int numberOfMonths;
+        double interestRate;
+        double total = getTotalPrice();
+
+        double price = getVehicleSold().getPrice();
+        if (finance) {
             if (price >= 10000) {
-                month = 48;
+                numberOfMonths = 48;
+                interestRate = 0.0425;
+                 return (total + (total * interestRate)) / numberOfMonths;
 
             } else {
-                month = 24;
-
+                numberOfMonths = 24;
+                interestRate = 0.0525;
+                return (total + (total * interestRate)) / numberOfMonths;
             }
+        } else if (finance == false) {
+            return 0.0;
+
         }
+        return 0.0;
     }
 }
